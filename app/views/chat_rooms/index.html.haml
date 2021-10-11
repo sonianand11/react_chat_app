@@ -1,0 +1,24 @@
+%h2.text-center
+  Chat rooms
+  %br
+  %small
+    = link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary btn-sx', "data-cy" => "new_chat_room_btn"
+
+%table.table.table-hover{"data-cy" => "chat_room_table"}
+  %thead
+    %tr
+      %th Title
+      %th Owner
+      %th Created At
+      %th
+  %tbody
+    - @chat_rooms.each do |chat_room|
+      %tr
+        %td
+          = chat_room.title
+        %td
+          = chat_room.user&.full_name
+        %td
+          = chat_room.created_at.strftime("%d/%m/%Y")
+        %td
+          = link_to "Enter", chat_room_path(chat_room), class: "btn btn-sm btn-primary", "data-cy" => "chat_room_enter_btn"
