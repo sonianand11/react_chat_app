@@ -12,4 +12,4 @@
 -   `RAILS_ENV=test rake db:create db:migrate`
 -   `RAILS_ENV=test rails s -p 5017`
 -   in new terminal tab `yarn cypress open --project ./test`
--   above command will open cypress window, click to timesheets_spec.js file
+-   above command will open cypress window, click to chat_room_spec.js file
